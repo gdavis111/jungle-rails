@@ -12,7 +12,9 @@ class OrdersController < ApplicationController
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
 
-      UserMailer.order_email(order, current_user).deliver_later
+      if current_user
+        UserMailer.order_email(order, current_user).deliver_later
+      end
 
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
