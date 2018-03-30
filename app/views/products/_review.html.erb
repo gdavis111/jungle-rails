@@ -1,8 +1,16 @@
-<% @product.reviews.each do |review| %>
+<% @product.reviews.reverse.each do |review| %>
   <div class="review">
     <dt>Review:</dt>
     <dd><%= review.description %></dd>
     <dt>Rating:</dt>
     <dd><%= review.rating %> stars</dd>
+
+    <% if current_user && review.user_id === current_user.id %>
+      <dt></dt>
+       <dd><%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: "Are you sure?" } %></dd>
+    <% end %>
+
   </div>
 <% end %>
+
+

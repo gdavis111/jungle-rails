@@ -64,6 +64,10 @@ main section.categories-show {
         font-size: em;
       }
 
+      aside.rating {
+          text-align: center;
+      }
+
       &:hover {
 
         border-color: #999;
@@ -75,8 +79,8 @@ main section.categories-show {
         aside.soldout {
           background-color: #d85552;
         }
-      }
 
+      }
     }
   }
 }

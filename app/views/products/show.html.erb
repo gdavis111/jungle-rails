@@ -7,7 +7,6 @@
   <article class="product-detail">
 
     <div class="row">
-
       <div class="col-sm-4">
         <%= image_tag @product.image.url, class: 'main-img' %>
       </div>
@@ -27,23 +26,16 @@
 
       <div class="col-sm-8">
         <dl class="dl-horizontal">
-          <h2>Add a review:</h2>
-
-          <!-- MAKE SURE THIS IS CORRECT -->
-          <%= form_for [@product, @review] do |f| %>
-            <dt>Details:</dt>
-            <dd><%= f.text_area :description %></dd>
-            <dt>Rating:</dt>
-            <dd><%= f.select :rating, [1, 2, 3, 4, 5] %></dd>
-            <dd class="submit"><%= f.submit "Submit" %></dd>
+          <% if current_user %>
+            <h2>Add a review:</h2>
+            <%= form_for [@product, @review] do |f| %>
+              <dt>Details:</dt>
+              <dd><%= f.text_area :description %></dd>
+              <dt>Rating:</dt>
+              <dd><%= f.select :rating, [5, 4, 3, 2, 1] %></dd>
+              <dd class="submit"><%= f.submit "Submit" %></dd>
+            <% end %>
           <% end %>
-          <!-- ########################## -->
-
-        </dl>
-      </div>
-
-      <div class="col-sm-8">
-        <dl class="dl-horizontal">
           <%= render 'review' %>
         </dl>
       </div>
