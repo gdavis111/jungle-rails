@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  # MAY NOT NEED THIS - used to force login before users can see certain pages
   def authorize
     redirect_to '/login' unless current_user
   end
