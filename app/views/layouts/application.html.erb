@@ -10,11 +10,15 @@
 
   <%= render 'layouts/top_nav' %>
 
-  <!-- Added this for user login / logout -->
+  <!-- for user login / logout state -->
   <% if current_user %>
-    Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+    <div class="logged-in">
+      Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+    </div>
   <% else %>
-    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+    <div class="logged-out">
+      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+    </div>
   <% end %>
 
 

@@ -24,6 +24,29 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
+
+      <div class="col-sm-8">
+        <dl class="dl-horizontal">
+          <h2>Add a review:</h2>
+
+          <!-- MAKE SURE THIS IS CORRECT -->
+          <%= form_for [@product, @review] do |f| %>
+            <dt>Details:</dt>
+            <dd><%= f.text_area :description %></dd>
+            <dt>Rating:</dt>
+            <dd><%= f.select :rating, [1, 2, 3, 4, 5] %></dd>
+            <dd class="submit"><%= f.submit "Submit" %></dd>
+          <% end %>
+          <!-- ########################## -->
+
+        </dl>
+      </div>
+
+      <div class="col-sm-8">
+        <dl class="dl-horizontal">
+          <%= render 'review' %>
+        </dl>
+      </div>
     </div>
 
   </article>
