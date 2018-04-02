@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2
+A mini e-commerce application built with Rails 4.2.  Users are able to register and sign in which gives them the ability to review and rate individual products.  Users have the option to delete only their own comments/reviews.  The app keeps track of average review ratings and lists that with each product on the site when scrolling through the list.  The app has built-in Stripe functionality to purchase items that have been added in the cart.  There is an `admin` section of the website which requires a preset username and password to access, where admin can add or delete products as well as add categories to the app.
 
 
 ## Setup
@@ -23,6 +23,28 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
+* Ruby
+* Rails
+* PostgreSQL
 * Stripe
+* sass-rails
+* uglifier
+* jquery-rails
+* turbolinks
+* jbuilder
+* sdoc
+* bcrypt
+* puma
+* bootstrap-sass
+* font-awesome-rails
+* money-rails
+* carrierwave
+* rmagick
+* faker
+* byebug
+* quiet_assets
+* dotenv-rails
+* web-console
+* spring
+* newrelic_rpm
+* rails_12factor
